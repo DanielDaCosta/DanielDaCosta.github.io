@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <meta http-equiv="refresh" content="3; url=https://DanielDaCosta.github.io/" />
+    
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   Daniel  Da Costa
 
 
-  | Page not found
+  | Lambda Email
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/404.html">
+<link rel="canonical" href="/projects/12_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -185,12 +185,103 @@
       <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Page not found</h1>
-    <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+    <h1 class="post-title">Lambda Email</h1>
+    <p class="post-description">Lambda that sends email to user</p>
   </header>
 
   <article>
-    <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://DanielDaCosta.github.io/">here</a>.</p>
+    <p><em>You can find the full code in <a href="https://github.com/DanielDaCosta/lambda-email" target="_blank" rel="noopener noreferrer">here</a></em></p>
+
+<p>Lambda that sends email to user, built using Terraform. It receives an array of dictionaries containing
+email subject, content and the email to receive the message.</p>
+
+<p>Lamba event input:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "data": {
+        [
+            {
+                'subject': 'Hello there from Python!',
+                'message': 'This message sent from lambda',
+                'to': 'teste@gmail.com'
+            },
+            {
+                'subject': 'Hello there from Python Again!',
+                'message': 'This message sent from lambda Again',
+                'to': 'unitys@gmail.com'
+            }
+        ]
+    }
+}
+</code></pre></div></div>
+<h1 id="details">Details</h1>
+
+<p>The repository already contains the required SendGrid 6.4.3 package installed inside the <em>package</em> folder.
+This repo has both Sendgrid and stmlib implentations! Chose the one that you prefer.</p>
+
+<h1 id="usage">Usage</h1>
+
+<p>This modules reads all its variables from Lambda Environment variables, as it can be seen in the file <em>config.py</em>.</p>
+
+<p>For sendGrid credentials, you can create your free account in their website: https://sendgrid.com</p>
+
+<h2 id="example-of-lambda-call">Example of lambda call</h2>
+
+<p>Lambda <em>asynchronous invocation</em> is preferable</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">json</span>
+<span class="kn">import</span> <span class="n">boto3</span>
+<span class="kn">from</span> <span class="n">config</span> <span class="kn">import</span> <span class="n">MS_SMS</span>
+
+<span class="c1"># MS_SMS = "name_of_function"
+</span>
+<span class="n">messages_array</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">'</span><span class="s">data</span><span class="sh">'</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="sh">'</span><span class="s">subject</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">HELLO THERE!</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">message</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">NICE MEETING YOY</span><span class="sh">'</span><span class="p">,</span>
+        <span class="sh">'</span><span class="s">to</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">TEST_EMAIL@gmail.com</span><span class="sh">'</span><span class="p">}]</span>
+    <span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">send_sms</span><span class="p">(</span><span class="n">messages_array</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Send sms
+    Args:
+        phone_number (string): the phone number that will receive the sms
+        body_message (string): the message
+    </span><span class="sh">"""</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">boto3</span><span class="p">.</span><span class="nf">client</span><span class="p">(</span><span class="sh">'</span><span class="s">lambda</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="sh">"</span><span class="s">data</span><span class="sh">"</span><span class="p">:</span> <span class="n">messages_array</span>
+    <span class="p">}</span>
+    <span class="n">client</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span>
+        <span class="n">FunctionName</span><span class="o">=</span><span class="n">MS_SMS</span><span class="p">,</span>
+        <span class="n">InvocationType</span><span class="o">=</span><span class="sh">'</span><span class="s">Event</span><span class="sh">'</span><span class="p">,</span>
+        <span class="n">Payload</span><span class="o">=</span><span class="n">json</span><span class="p">.</span><span class="nf">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">),</span>
+        <span class="n">LogType</span><span class="o">=</span><span class="sh">'</span><span class="s">None</span><span class="sh">'</span>
+    <span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="calling-module">Calling module</h2>
+
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Module </span>
+<span class="k">module</span> <span class="s2">"sms"</span> 
+    <span class="nx">source</span> <span class="err">=</span> <span class="s2">"git@github.com:DanielDaCosta/lambda-email.git"</span>
+
+    <span class="nx">lambda_name</span>             <span class="err">=</span> <span class="kd">var</span><span class="err">.</span><span class="nx">lambda_sms</span>
+    <span class="nx">environment</span>             <span class="err">=</span> <span class="kd">var</span><span class="err">.</span><span class="nx">environment</span>
+    <span class="nx">name</span>                    <span class="err">=</span> <span class="kd">var</span><span class="err">.</span><span class="nx">name</span>
+    <span class="nx">region</span>                  <span class="err">=</span> <span class="kd">var</span><span class="err">.</span><span class="nx">region</span>
+    <span class="nx">EMAIL_ADDRESS</span>           <span class="err">=</span> <span class="kd">var</span><span class="err">.</span><span class="nx">EMAIL_ADDRESS</span>
+    <span class="nx">EMAIL_PASS</span>              <span class="err">=</span> <span class="kd">var</span><span class="err">.</span><span class="nx">EMAIL_PASS</span>
+    <span class="nx">SENDGRID_API_KEY</span>        <span class="err">=</span> <span class="kd">var</span><span class="err">.</span><span class="nx">SENDGRID_API_KEY</span>
+<span class="err">}</span>
+</code></pre></div></div>
+
+<h1 id="references--acknowledgments">References &amp; Acknowledgments</h1>
+<ul>
+  <li>https://www.youtube.com/watch?v=JRCJ6RtE3xU</li>
+  <li>https://stackabuse.com/how-to-send-emails-with-gmail-using-python/</li>
+  <li>https://sendgrid.com/docs/for-developers/sending-email/v3-python-code-example/</li>
+</ul>
 
   </article>
 

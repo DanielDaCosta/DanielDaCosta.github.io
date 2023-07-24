@@ -12,7 +12,7 @@
   Daniel  Da Costa
 
 
-  | blog
+  | Text Classifier
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/3_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -102,18 +102,14 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -168,8 +164,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -188,56 +184,102 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Blog Posts</h1>
-    <h2>Data Science, Data Engineering and Other Ideas</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Text Classifier</h1>
+    <p class="post-description">Random Forest Classifier with MultiOuputClassifier</p>
+  </header>
 
+  <article>
+    <p><em>You can find the full code in <a href="https://github.com/DanielDaCosta/disaster-webapp" target="_blank" rel="noopener noreferrer">here</a></em></p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/mlflow/">Set Up MLflow on AWS EC2 Using Docker, S3, and RDS</a></h3>
-        <p class="post-meta">October 18, 2021</p>
-        <p>Implementation of MLflow to make model training efforts more efficient.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/etl-airflow/">Building an ETL pipeline with Airflow and ECS</a></h3>
-        <p class="post-meta">December 20, 2020</p>
-        <p>ETL is an automated process that takes raw data, extracts and transforms the information required for analysis, and loads it to a data warehouse.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/bastionless/">Going Bastion-less - Accessing Private EC2 instance with Session Manager</a></h3>
-        <p class="post-meta">November 2, 2020</p>
-        <p>In this post we will set up a private EC2 instance (in a private subnet), and use SSM session manager to access the instance that hosts a Jupyter Notebook server.</p>
-      </li>
-    
-  </ul>
+<p>The project consists of a Multi-Label Text Classifier project using a Random Forest Classifier with MultiOuputClassifier from Scikit-learn.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>The dataset consists of disaster messages that are classified into 36 different classes. The goal of the model is to classify an input message into these different classes.</p>
 
+<p>A Web Application was developped allowing to analyze the dataset and write your own message to be classified.</p>
 
+<h2 id="dataset">Dataset</h2>
+<p>The dataset consists of disaster messages that are classified into 36 different classes. The dataset in highly imbalanced, having different distributions for each class. In order to reduce this problem a class weighted approach was used, where we make the classifier aware of the imbalanced data by incorporating the weights of classes into the cost function.</p>
+
+<p>In the <strong>Random Forest</strong> model, the parameter <em>class_weight</em> was set to <em>‘balanced’</em>, using the values of y to automatically adjust weights inversely proportional to class frequencies in the input data.</p>
+
+<h2 id="web-application">Web Application</h2>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/classifier_1.png" alt="" title="Classifier 1">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/classifier_2.png" alt="" title="Classifier 2">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/classifier_3.png" alt="" title="Classifier 3">
+    </div>
+</div>
+
+<h2 id="usage">Usage</h2>
+
+<ul>
+  <li>data/ : ETL folder. Data preparation. To load the data from scratch:</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">python process_data.py disaster_messages.csv disaster_categories.csv DisasterResponse.db</code></p>
+
+<ul>
+  <li>models/ : Machine Learning models. To train the model:</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">python train_classifier.py ../data/DisasterResponse.db classifier.pkl</code></p>
+
+<ul>
+  <li>app/ : Contains the scripts for the web application. In order to run de application go into the app/ folder an run the command:</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">python run.py</code></p>
+
+<h3 id="file-structure">File Structure</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+├── LICENSE
+├── README.md
+├── app
+│   ├── run.py # Flask file that runs app
+│   └── templates
+│       ├── go.html # classification result page of web app
+│       └── master.html # main page of web app
+├── data
+│   ├── DisasterResponse.db # database to save clean data to
+│   ├── disaster_categories.csv # data to process
+│   ├── disaster_messages.csv # data to process
+│   └── process_data.py
+├── models
+│   ├── classifier.pkl # saved model 
+│   └── train_classifier.py
+└── requirements.txt
+</code></pre></div></div>
+
+<h2 id="installation">Installation</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install -r requirements.py
+</code></pre></div></div>
+<h2 id="development">Development</h2>
+<p>Other models architetures were also explored. You can check the solution for the same problem using <strong>RNN with keras</strong> in this other GitHub Repo: <a href="https://github.com/DanielDaCosta/RNN-Keras/blob/master/ML-Pipeline-RNN.ipynb" target="_blank" rel="noopener noreferrer">Multi-Label Text classification problem with Keras</a></p>
+
+<h2 id="acknowledgments-and-references">Acknowledgments and References</h2>
+<p>Special thanks to <a href="https://appen.com/" target="_blank" rel="noopener noreferrer">Figure Eight</a> for the dataset.</p>
+<ul>
+  <li>https://towardsdatascience.com/another-twitter-sentiment-analysis-bb5b01ebad90</li>
+  <li>https://www.kaggle.com/gunesevitan/nlp-with-disaster-tweets-eda-cleaning-and-bert#3.-Target-and-N-grams</li>
+  <li>https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9</li>
+</ul>
+
+  </article>
 
 </div>
 
@@ -248,8 +290,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2023 Daniel  Da Costa.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    © Copyright 2023 Daniel  Da Costa.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
 
     
     

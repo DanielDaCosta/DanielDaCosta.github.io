@@ -12,7 +12,7 @@
   Daniel  Da Costa
 
 
-  | blog
+  | Automating Lambda modules deployment with GitLab CI
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/gitlabci/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -106,14 +106,10 @@
             <a class="nav-link" href="/blog/">
               blog
               
-              <span class="sr-only">(current)</span>
-              
             </a>
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -168,8 +164,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -186,58 +182,47 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>Blog Posts</h1>
-    <h2>Data Science, Data Engineering and Other Ideas</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Automating Lambda modules deployment with GitLab CI</h1>
+    <p class="post-meta">August 9, 2020</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/mlflow/">Set Up MLflow on AWS EC2 Using Docker, S3, and RDS</a></h3>
-        <p class="post-meta">October 18, 2021</p>
-        <p>Implementation of MLflow to make model training efforts more efficient.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/etl-airflow/">Building an ETL pipeline with Airflow and ECS</a></h3>
-        <p class="post-meta">December 20, 2020</p>
-        <p>ETL is an automated process that takes raw data, extracts and transforms the information required for analysis, and loads it to a data warehouse.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/bastionless/">Going Bastion-less - Accessing Private EC2 instance with Session Manager</a></h3>
-        <p class="post-meta">November 2, 2020</p>
-        <p>In this post we will set up a private EC2 instance (in a private subnet), and use SSM session manager to access the instance that hosts a Jupyter Notebook server.</p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <p>While working with terraform lambda modules, I had a hard time finding out the best repository architecture to automate my lambdas deployment. I couldn’t find any article that I could use as a guideline, that’s why I’m writing this article.</p>
+
+<p>While working on big projects, project organization is a must-have. In this story, you will be presented to one way to organize your repositories so that it facilitates the deployment procedure, making it much more scalable.</p>
+
+<p>In this article, we’ll be building the following repositories architecture:</p>
+
+<ul>
+  <li>
+<strong>Lambda-Module</strong>: Repository containing the Terraform Lambda module.</li>
+  <li>
+<strong>Lambda-Infra</strong>: Repository containing Terraform code for deployment into AWS.</li>
+  <li>
+<strong>Lambda-Code</strong>: Repository containing the lambda code for deployment using Gitlab-CI.</li>
+</ul>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/gitlab-ci.jpg" alt="" title="GItlab-ci Image">
+    </div>
+</div>
+<div class="caption">
+    Photo by Sai Kiran Anagani on Unsplash
+</div>
+
+<hr>
+
+<p>You can check the full blog post on my Medium at Towards Data Science: <a href="https://towardsdatascience.com/automating-lambda-modules-deployment-with-gitlab-ci-b34cc58a7ac0" target="_blank" rel="noopener noreferrer">Automating Lambda modules deployment with GitLab CI</a></p>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 
@@ -248,8 +233,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2023 Daniel  Da Costa.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    © Copyright 2023 Daniel  Da Costa.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
 
     
     

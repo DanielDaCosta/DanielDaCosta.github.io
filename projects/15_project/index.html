@@ -12,7 +12,7 @@
   Daniel  Da Costa
 
 
-  | blog
+  | AWS Lambda module
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/15_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -102,18 +102,14 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -168,8 +164,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -188,56 +184,49 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Blog Posts</h1>
-    <h2>Data Science, Data Engineering and Other Ideas</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">AWS Lambda module</h1>
+    <p class="post-description">Terraform module</p>
+  </header>
 
+  <article>
+    <p><em>You can find the full code in <a href="https://github.com/DanielDaCosta/lambda-module" target="_blank" rel="noopener noreferrer">here</a></em></p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/mlflow/">Set Up MLflow on AWS EC2 Using Docker, S3, and RDS</a></h3>
-        <p class="post-meta">October 18, 2021</p>
-        <p>Implementation of MLflow to make model training efforts more efficient.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/etl-airflow/">Building an ETL pipeline with Airflow and ECS</a></h3>
-        <p class="post-meta">December 20, 2020</p>
-        <p>ETL is an automated process that takes raw data, extracts and transforms the information required for analysis, and loads it to a data warehouse.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/bastionless/">Going Bastion-less - Accessing Private EC2 instance with Session Manager</a></h3>
-        <p class="post-meta">November 2, 2020</p>
-        <p>In this post we will set up a private EC2 instance (in a private subnet), and use SSM session manager to access the instance that hosts a Jupyter Notebook server.</p>
-      </li>
-    
-  </ul>
+<p>This is a short version of a terraform lambda module with some naming structure and patterns, used in order to give more scalability. The code was base on the following repository: <a href="https://github.com/terraform-aws-modules/terraform-aws-lambda" target="_blank" rel="noopener noreferrer">terraform-aws-module</a> developed by Terraform AWS modules.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>Check more on the following <a href="https://medium.com/@danieldacosta_75030/automating-lambda-modules-deployment-with-gitlab-ci-b34cc58a7ac0" target="_blank" rel="noopener noreferrer">Automating Lambda Modules Deployment With Gitlab-CI</a>.</p>
 
+<h2 id="usage">Usage</h2>
 
+<div class="language-terraform highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="s2">"lambda_sms"</span> <span class="p">{</span>
+  <span class="nx">source</span> <span class="p">=</span> <span class="s2">"git@github.com:DanielDaCosta/lambda-module.git"</span>
+
+  <span class="nx">lambda_name</span>             <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">lambda_sms</span>
+  <span class="nx">s3_bucket</span>               <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">s3_bucket</span>
+  <span class="nx">s3_key</span>                  <span class="p">=</span> <span class="s2">"lambda-sms.zip"</span>
+  <span class="nx">s3_object_version</span>       <span class="p">=</span> <span class="k">data</span><span class="p">.</span><span class="nx">aws_s3_bucket_object</span><span class="p">.</span><span class="nx">lambda_sms</span><span class="p">.</span><span class="nx">version_id</span>
+  <span class="nx">environment</span>             <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">environment</span>
+  <span class="nx">name</span>                    <span class="p">=</span> <span class="kd">var</span><span class="p">.</span><span class="nx">name</span>
+  <span class="nx">description</span>             <span class="p">=</span> <span class="s2">"Send SMS to user"</span>
+  <span class="nx">role</span>                    <span class="p">=</span> <span class="k">data</span><span class="p">.</span><span class="nx">aws_iam_role</span><span class="p">.</span><span class="nx">lambda_exec_sms</span><span class="p">.</span><span class="nx">arn</span>
+  <span class="nx">runtime</span>                 <span class="p">=</span> <span class="s2">"python3.7"</span>
+
+  <span class="nx">reserved_concurrent_executions</span> <span class="p">=</span> <span class="mi">30</span>
+
+  <span class="nx">vpc_subnet_ids</span>          <span class="p">=</span> <span class="nx">tolist</span><span class="p">(</span><span class="k">data</span><span class="p">.</span><span class="nx">aws_subnet_ids</span><span class="p">.</span><span class="nx">private</span><span class="p">.</span><span class="nx">ids</span><span class="p">)</span>
+  <span class="nx">vpc_security_group_ids</span>  <span class="p">=</span> <span class="nx">tolist</span><span class="p">([</span><span class="k">data</span><span class="p">.</span><span class="nx">aws_security_group</span><span class="p">.</span><span class="nx">postgres</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span> <span class="nx">aws_security_group</span><span class="p">.</span><span class="nx">lambda</span><span class="p">.</span><span class="nx">id</span><span class="p">])</span>
+
+  <span class="nx">environment_variables</span> <span class="p">=</span> <span class="p">{</span>
+    <span class="nx">ENV</span>     <span class="p">=</span> <span class="kd">local</span><span class="p">.</span><span class="nx">name_dash</span>
+  <span class="p">}</span>
+
+  <span class="nx">create_async_event_config</span> <span class="p">=</span> <span class="kc">true</span>
+  <span class="nx">maximum_retry_attempts</span>    <span class="p">=</span> <span class="mi">0</span>
+  <span class="nx">destination_on_failure</span>    <span class="p">=</span> <span class="k">data</span><span class="p">.</span><span class="nx">aws_sqs_queue</span><span class="p">.</span><span class="nx">sms_queue</span><span class="p">.</span><span class="nx">arn</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+  </article>
 
 </div>
 
@@ -248,8 +237,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2023 Daniel  Da Costa.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    © Copyright 2023 Daniel  Da Costa.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
 
     
     

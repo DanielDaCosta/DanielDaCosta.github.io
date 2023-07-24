@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Daniel  Da Costa
+
+
+  | Evaluating Large Language Models on Code Generation
+
+</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="/projects/18_project/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+<script src="/assets/js/theme.js"></script>
+<script src="/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="https://DanielDaCosta.github.io/">
+       <span class="font-weight-bold">Daniel</span>   Da Costa
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/projects/">
+                projects
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/resume/">
+                resume
+                
+              </a>
+          </li>
+          
+          
+          
+          
+            <div class="toggle-container">
+              <a id="light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Evaluating Large Language Models on Code Generation</h1>
+    <p class="post-description">This repository contains the code and results for the performances in Python code generation of three different code generation models – CodeT5, CodeGen, and GPT-3.5</p>
+  </header>
+
+  <article>
+    <p><em>You can find the full code in <a href="https://github.com/DanielDaCosta/CodeGPT" target="_blank" rel="noopener noreferrer">here</a></em></p>
+
+<h1 id="evaluating-large-language-models-on-code-generation">Evaluating Large Language Models on Code Generation</h1>
+<p>In this study, the performances in Python code generation of three different code generation models – <strong>CodeT5</strong>, <strong>CodeGen</strong>, and <strong>GPT-3.5</strong> – were compared using the <a href="https://huggingface.co/datasets/mbpp" target="_blank" rel="noopener noreferrer">Mostly Basic Python Problems (MBPP) dataset</a>. The <em>pass@k</em> metric was used as the primary method of evaluation, and CodeT5 and CodeGen were evaluated in a few-shot setting, while GPT-3.5 was evaluated in zero-shot and few-shot settings. The findings suggest that GPT-3.5 performs best in the few-shot setting, followed by GPT-3.5 in the zero-shot setting, CodeT5 in the few-shot setting, and CodeGen in the few-shot setting. These results indicate that GPT-3.5 is a promising model for code generation tasks, particularly in situations where the training data is limited, and highlight the importance of providing contextual information through prompting to overcome certain deficiencies in the zero-shot setting.</p>
+
+<h2 id="problem-description">Problem Description</h2>
+<p>Large language models can capture the syntax, semantics, and structure of programming languages and generate code snippets that are close to human-written code. However, the effectiveness of large language models for code generation may vary depending on the specific task and the available training data. Some code generation tasks require a significant amount of training data and fine-tuning to achieve optimal performance, while others may require the use of specialized models or techniques. Moreover, large language models are complex and require significant computational resources to train and optimize. The size and complexity of these models can make them challenging to use in real-world scenarios, where computational resources may be limited. This study compares the performances of several code generation models to reveal their strengths and weaknesses and discover ways in which they can be improved.</p>
+
+<h2 id="results">Results</h2>
+
+<p>The dataset used to evaluate the code generation performances of the three models was the MBPP dataset. The dataset comprises approximately 1,000 crowd-sourced Python programming problems, where each problem contains a docstring of natural language text detailing the functionality of the code snippet, the code solution, and three assert statements (test cases). All three models were evaluated on the first 100 samples from the MBPP dataset.</p>
+
+<p>The <em>pass@k</em> metric was used as the primary evaluation method, as it is commonly used to evaluate the performance of code generation models (Chen et al., 2021). It robustly estimates the probability that one of the k generations passes the tests where n is the generated candidate.
+For example, if <em>pass@5</em> is 80%, it means that for 80% of the queries, the system returned at least one code snippet that passed all test statements among the top 5 results. The performance of CodeT5 and CodeGen was assessed using k values of 1, 2, and 5, while GPT-3.5 was only evaluated with k=1 due to the API’s limitations in generating multiple outputs.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/table_results.png" alt="" title="Table results">
+    </div>
+</div>
+
+<p>BLEU score, which is also a common metric used to evaluate the quality of machine translation output, was not an appropriate metric for evaluating the performance of code generation models. BLEU score measures the overlap between a machine-generated text and one or more reference texts, based on n-gram matching. However, in the case of code generation, the generated code may differ significantly from the reference code even if it performs the same function, as there can be multiple ways of implementing the same function in code and the generated code may have a different structure or syntax from the reference code.</p>
+
+<p>The outputs of the models were categorized into six different qualitative outcomes: RuntimeError, CompileError, FailedTest, NoResult, PassedOneOrTwoTests, and PassedAllTests  (Le et al., 2022). In the RuntimeError outcome, an error occurred in the execution of the generated code, while in the CompileError outcome, an error occurred in program compilation. The NoResult outcome indicates that the model did not output any code at all, which may be due to vagueness in the task description in which the model required more information to be able to provide any meaningful results. The NoResult outcome was kept separate from the FailedTest outcome, in which the model was able to make sense of the task description and output the desired function, but failed the test cases because the outputs from the functions were not the in format that the tests required, or because the model assumed the input(s) to the functions to be in a format different to what the functions in the test cases expected.</p>
+
+<h3 id="gpt-35">GPT-3.5</h3>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/GPT-Errors.jpeg" alt="" title="GPT Errors">
+    </div>
+</div>
+
+<p>We evaluated the gpt-3.5-turbo model on the dataset in both the zero-shot and few-shot settings to understand whether contextual information through prompting helps the model perform better in this scenario.</p>
+
+<p>The above figure shows that the model performs really well even in the zero-shot setting, passing all test cases for 40\% of the sample. However, we realized that there were some limitations in this setting. These included cases where the model required more information to output any code and cases where the model displayed a logically correct function, but still failed the tests due to differences in output formats. To deal with such cases and more, we evaluated the model in the few-shot setting, giving it the test cases to learn from.</p>
+
+<p>In this setting, not only did we observe a considerable increase in performance, with the model passing at least one test for 83\% of the sample, but we also benefited from a reduction in the post-processing work (alluded to in the “Methods” section) as the model was able to understand the function name, input(s) and output(s) formats from the examples themselves. With the additional prompts, the model was able to understand the context and requirements surrounding the task descriptions as well, which invariably helped to considerably reduce the “No Result” category from 17 to 1. There were, however, certain instances where the model could not display good results even in this setting. This included instances where the task description required the model to understand certain mathematical concepts or where the arrangement of the inputs and outputs of the model did not align perfectly with the test cases (additional error cases are provided in the appendix). We believe that for many of these cases, we can improve the model performance by providing it with even richer details in the prompts and through reinforcement learning with human feedback - ideas to make use of in future work.</p>
+
+<h3 id="codet5">CodeT5</h3>
+<p>The results of the CodeT5 model evaluated in the few-shot setting are shown below.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/CodeGen-CodeT5.png" alt="" title="CodeGen and CodeT5 Errors">
+    </div>
+</div>
+
+<p>The results indicate that the runtime and compilation errors for code generated by the CodeT5 model in the few-shot setting are relatively high compared to that generated by the GPT-3.5 model in zero-shot and few-shot settings. This implies that CodeT5 is a weaker code generation model than GPT-3.5, as the code it generates may have more syntax errors that the model is unable to notice and address. Additionally, CodeT5 has a higher number of FailedTest outcomes than GPT-3.5, which indicates that although CodeT5 was also given three test cases along with the task description as input, it was unable to leverage the format of the test cases to reduce the formatting issues it produced.</p>
+
+<h3 id="codegen">CodeGen</h3>
+<p>The results of the CodeGen model with 2B parameters evaluated in the few-shot setting are shown in figure above.</p>
+
+<p>Most noticeably, the CodeGen model was unable to generate code for significantly more samples than GPT-3.5 and CodeT5. This is likely due to the fact that CodeGen was trained on specific datasets with examples and labels, which were then used during inference to generate code. The MBPP dataset may be dissimilar to the datasets that it was trained on, thereby the model is likely unable to make sense of the task description objectives to produce any code.</p>
+
+<h2 id="conclusions-and-future-work">Conclusions and Future Work</h2>
+
+<p>From this study, GPT-3.5 in the few-shot setting was found to have the best performance for Python code generation, followed by GPT-3.5 in the zero-shot setting, CodeT5 in the few-shot setting, and CodeGen in the few-shot setting. Based on these findings, it can be concluded that providing more context and information to large language models such as GPT-3.5 is extremely useful. Additional context may be provided by using a more rich task description and adding more instructions to the model input. Furthermore, post-processing can be performed by combining the inputs and outputs of two models, such as using the output from CodeT5 as input to GPT-3.5. Finally, bigger and more nuanced models such as GPT-4 can be explored to reveal whether the model can produce even better performance in Python code generation.</p>
+
+<h2 id="resource-requirements">Resource Requirements</h2>
+<p>The resource requirements for different code generation models varied. The pre-trained GPT-3.5 model was provided by OpenAI and accessed through its API. It was run locally and did not require any GPU resources. To run the CodeGen and CodeT5 models, GPU resources were required. A VM instance with GPU was created on Google Cloud Platform, specifically using an NVIDIA V100. However, even with NVIDIA V100, the multiple outputs inference for the CodeGen 6B model could not be run. As a result, the CodeGen 2B model was used, which is less computationally intensive but still capable of generating code snippets.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+  <li>
+    <p>Jacob Austin, Augustus Odena, Maxwell I. Nye,
+Maarten Bosma, Henryk Michalewski, David Do-
+han, Ellen Jiang, Carrie J. Cai, Michael Terry,
+Quoc V. Le, and Charles Sutton. 2021. Program
+synthesis with large language models. CoRR,
+abs/2108.07732</p>
+  </li>
+  <li>
+    <p>Tom B. Brown, Benjamin Mann, Nick Ryder,
+Melanie Subbiah, Jared Kaplan, Prafulla Dhari-
+wal, Arvind Neelakantan, Pranav Shyam, Girish
+Sastry, Amanda Askell, Sandhini Agarwal, Ariel
+Herbert-Voss, Gretchen Krueger, Tom Henighan,
+Rewon Child, Aditya Ramesh, Daniel M. Ziegler,
+Jeffrey Wu, Clemens Winter, Christopher Hesse,
+Mark Chen, Eric Sigler, Mateusz Litwin, Scott
+Gray, Benjamin Chess, Jack Clark, Christopher
+Berner, Sam McCandlish, Alec Radford, Ilya
+Sutskever, and Dario Amodei. 2020. Language
+models are few-shot learners.</p>
+  </li>
+  <li>
+    <p>Mark Chen, Jerry Tworek, Heewoo Jun, Qiming
+Yuan, Henrique Ponde de Oliveira Pinto, Jared
+Kaplan, Harri Edwards, Yuri Burda, Nicholas
+Joseph, Greg Brockman, Alex Ray, Raul Puri,
+Gretchen Krueger, Michael Petrov, Heidy Khlaaf,
+Girish Sastry, Pamela Mishkin, Brooke Chan,
+Scott Gray, Nick Ryder, Mikhail Pavlov, Alethea
+Power, Lukasz Kaiser, Mohammad Bavarian,
+Clemens Winter, Philippe Tillet, Felipe Petroski
+Such, Dave Cummings, Matthias Plappert, Fo-
+tios Chantzis, Elizabeth Barnes, Ariel Herbert-
+Voss, William Hebgen Guss, Alex Nichol, Alex
+Paino, Nikolas Tezak, Jie Tang, Igor Babuschkin,
+Suchir Balaji, Shantanu Jain, William Saunders,
+Christopher Hesse, Andrew N. Carr, Jan Leike,
+Josh Achiam, Vedant Misra, Evan Morikawa,
+Alec Radford, Matthew Knight, Miles Brundage,
+Mira Murati, Katie Mayer, Peter Welinder, Bob
+McGrew, Dario Amodei, Sam McCandlish, Ilya
+Sutskever, and Wojciech Zaremba. 2021. Evalu-
+ating large language models trained on code.</p>
+  </li>
+  <li>
+    <p>Hamel Husain, Ho-Hsiang Wu, Tiferet Gazit, Mil-
+tiadis Allamanis, and Marc Brockschmidt. 2019.
+Codesearchnet challenge: Evaluating the state
+of semantic code search. CoRR, abs/1909.09436.</p>
+  </li>
+  <li>
+    <p>Hung Le, Yue Wang, Akhilesh Deepak Gotmare, Sil-
+vio Savarese, and Steven C. H. Hoi. 2022. Coderl:
+Mastering code generation through pretrained
+models and deep reinforcement learning.</p>
+  </li>
+  <li>
+    <p>Erik Nijkamp, Bo Pang, Hiroaki Hayashi, Lifu Tu,
+Huan Wang, Yingbo Zhou, Silvio Savarese, and
+Caiming Xiong. 2023. Codegen: An open large
+language model for code with multi-turn program
+synthesis.</p>
+  </li>
+  <li>
+    <p>Yue Wang, Weishi Wang, Shafiq R. Joty, and
+Steven C. H. Hoi. 2021. Codet5: Identifier-aware
+unified pre-trained encoder-decoder models for
+code understanding and generation. CoRR,
+abs/2109.00859.</p>
+  </li>
+</ul>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    © Copyright 2023 Daniel  Da Costa.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>

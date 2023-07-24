@@ -12,7 +12,7 @@
   Daniel  Da Costa
 
 
-  | blog
+  | Discord notification using CloudWatch Alarms, SNS and AWS Lambda
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2020/notifications/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -106,14 +106,10 @@
             <a class="nav-link" href="/blog/">
               blog
               
-              <span class="sr-only">(current)</span>
-              
             </a>
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -168,8 +164,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -186,58 +182,58 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>Blog Posts</h1>
-    <h2>Data Science, Data Engineering and Other Ideas</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Discord notification using CloudWatch Alarms, SNS and AWS Lambda</h1>
+    <p class="post-meta">September 12, 2020</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/mlflow/">Set Up MLflow on AWS EC2 Using Docker, S3, and RDS</a></h3>
-        <p class="post-meta">October 18, 2021</p>
-        <p>Implementation of MLflow to make model training efforts more efficient.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/etl-airflow/">Building an ETL pipeline with Airflow and ECS</a></h3>
-        <p class="post-meta">December 20, 2020</p>
-        <p>ETL is an automated process that takes raw data, extracts and transforms the information required for analysis, and loads it to a data warehouse.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/bastionless/">Going Bastion-less - Accessing Private EC2 instance with Session Manager</a></h3>
-        <p class="post-meta">November 2, 2020</p>
-        <p>In this post we will set up a private EC2 instance (in a private subnet), and use SSM session manager to access the instance that hosts a Jupyter Notebook server.</p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <p>Alarms exist to notify us when our system behaves in an unexpected way, which warrants manual intervention to correct. When we have multiple systems in a production environment and an error passes unnoticed, the consequences can be catastrophic.</p>
+
+<p>An alarm should be created when the system cannot automatically recover, and human intervention is required. If an alert happens to occur too frequently it might lead to longer response time or even get missed.</p>
+
+<p>In this article, we will be building an alarm notification pipeline for an AWS Lambda function. For that will be using 3 AWS Services: AWS Lambda, Simple Notification Service (SNS), and CloudWatch. The goal is to send a notification to a Discord Channel when a CloudWatch Alarm is triggered.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/notifications.png" alt="" title="SNS Notifications Architecture">
+    </div>
+</div>
+<div class="caption">
+    Designed using Lucidchart: https://www.lucidchart.com
+</div>
+
+<hr>
+
+<p>You can check the full blog post on my Medium at Towards Data Science: <a href="https://towardsdatascience.com/discord-notification-using-cloudwatch-alarms-sns-and-aws-lambda-71393861699f" target="_blank" rel="noopener noreferrer">Discord notification using CloudWatch Alarms, SNS and AWS Lambda</a></p>
+
+<!-- This theme supports rendering beautiful math in inline and display modes using [MathJax 3](https://www.mathjax.org/) engine. You just need to surround your math expression with `$$`, like `$$ E = mc^2 $$`. If you leave it inside a paragraph, it will produce an inline expression, just like $$ E = mc^2 $$.
+
+To use display mode, again surround your expression with `$$` and place it as a separate paragraph. Here is an example:
+
+$$
+\sum_{k=1}^\infty |\langle x, e_k \rangle|^2 \leq \|x\|^2
+$$
+
+You can also use `\begin{equation}...\end{equation}` instead of `$$` for display mode math.
+MathJax will automatically number equations:
+
+\begin{equation}
+\label{eq:caushy-shwarz}
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+\end{equation}
+
+and by adding `\label{...}` inside the equation environment, we can now refer to the equation using `\eqref`.
+
+Note that MathJax 3 is [a major re-write of MathJax](https://docs.mathjax.org/en/latest/upgrading/whats-new-3.0.html) that brought a significant improvement to the loading and rendering speed, which is now [on par with KaTeX](http://www.intmath.com/cg5/katex-mathjax-comparison.php). -->
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 
@@ -248,8 +244,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2023 Daniel  Da Costa.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    © Copyright 2023 Daniel  Da Costa.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
 
     
     

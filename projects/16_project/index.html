@@ -12,7 +12,7 @@
   Daniel  Da Costa
 
 
-  | blog
+  | Natural Language Generator
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/16_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -102,18 +102,14 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -168,8 +164,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -188,56 +184,57 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Blog Posts</h1>
-    <h2>Data Science, Data Engineering and Other Ideas</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Natural Language Generator</h1>
+    <p class="post-description">Generates sentences based on numerical inputs</p>
+  </header>
 
+  <article>
+    <p><em>You can find the full code in <a href="https://github.com/DanielDaCosta/sentence-generator" target="_blank" rel="noopener noreferrer">here</a></em></p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/mlflow/">Set Up MLflow on AWS EC2 Using Docker, S3, and RDS</a></h3>
-        <p class="post-meta">October 18, 2021</p>
-        <p>Implementation of MLflow to make model training efforts more efficient.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/etl-airflow/">Building an ETL pipeline with Airflow and ECS</a></h3>
-        <p class="post-meta">December 20, 2020</p>
-        <p>ETL is an automated process that takes raw data, extracts and transforms the information required for analysis, and loads it to a data warehouse.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/bastionless/">Going Bastion-less - Accessing Private EC2 instance with Session Manager</a></h3>
-        <p class="post-meta">November 2, 2020</p>
-        <p>In this post we will set up a private EC2 instance (in a private subnet), and use SSM session manager to access the instance that hosts a Jupyter Notebook server.</p>
-      </li>
-    
-  </ul>
+<p>Generates sentences based on numerical inputs, taking into account: sensitiveness and intensity of the data.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>With this project you can build sentences like:</p>
+<ul>
+  <li>Input: “number of people”,</li>
+  <li>Old Data</li>
+  <li>New Data</li>
+  <li>Settings: object containing settings informations:
+    <ul>
+      <li>sensitiveness: sensitiveness of data,</li>
+      <li>threshold: minimum value to change level of data</li>
+      <li>precision: desired decimal places</li>
+      <li>dataType: group of the inserted data</li>
+    </ul>
+  </li>
+</ul>
 
+<p>Example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Today, the number of people decreased reasonably to 2. Decrease of 60% in comparison to yestarday.
+- There was an increase of 60% in the number of people counted today in comparison to yestarday. A variation from 5 to 8.
+- There wasn't any considerable change in the number of people today. Stayed constant on 5 in comparison to yestarday.
+</code></pre></div></div>
 
+<h2 id="usage">Usage</h2>
+<p>You can build your own senteces own the <em>senteces.json</em> file, choosing your own variables.
+You then can set the values of each variables, and changing the NLG intensity.</p>
+
+<h2 id="development">Development</h2>
+
+<p>All contributors of all levels are welcome to help in any possible away.</p>
+
+<p>The project has a MIT license.</p>
+
+<p><strong>Souce Code</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/DanielDaCosta/sentence-generator.git
+</code></pre></div></div>
+
+<h2 id="references--acnknoledgments">References &amp; Acnknoledgments</h2>
+
+<p>Special Thanks to @Jitta and his <a href="https://github.com/jitta/Natural-Language-Generation" target="_blank" rel="noopener noreferrer">Git Rebo</a>, for the base idea of this project.</p>
+
+  </article>
 
 </div>
 
@@ -248,8 +245,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2023 Daniel  Da Costa.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    © Copyright 2023 Daniel  Da Costa.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
 
     
     

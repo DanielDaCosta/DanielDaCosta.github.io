@@ -12,7 +12,7 @@
   Daniel  Da Costa
 
 
-  | blog
+  | Energy Forecasting
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/2_project/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -102,18 +102,14 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li>
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -168,8 +164,8 @@
           
           
           
-            <div class = "toggle-container">
-              <a id = "light-toggle">
+            <div class="toggle-container">
+              <a id="light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
@@ -188,56 +184,54 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Blog Posts</h1>
-    <h2>Data Science, Data Engineering and Other Ideas</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Energy Forecasting</h1>
+    <p class="post-description">XGboost model for energy forecasting</p>
+  </header>
 
+  <article>
+    <p><em>You can find the full code in <a href="https://github.com/DanielDaCosta/energy-forecast" target="_blank" rel="noopener noreferrer">here</a></em></p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/mlflow/">Set Up MLflow on AWS EC2 Using Docker, S3, and RDS</a></h3>
-        <p class="post-meta">October 18, 2021</p>
-        <p>Implementation of MLflow to make model training efforts more efficient.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/etl-airflow/">Building an ETL pipeline with Airflow and ECS</a></h3>
-        <p class="post-meta">December 20, 2020</p>
-        <p>ETL is an automated process that takes raw data, extracts and transforms the information required for analysis, and loads it to a data warehouse.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/bastionless/">Going Bastion-less - Accessing Private EC2 instance with Session Manager</a></h3>
-        <p class="post-meta">November 2, 2020</p>
-        <p>In this post we will set up a private EC2 instance (in a private subnet), and use SSM session manager to access the instance that hosts a Jupyter Notebook server.</p>
-      </li>
-    
-  </ul>
+<p>This repository code came from the work of <a href="https://github.com/madagra/energy-ts-analysis" target="_blank" rel="noopener noreferrer">Mario Dagrada</a>, special thanks for the help.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<p>The repository consists of an energy forecasting model using XGboost. The dataset consists of hourly energy consumption rates in kWh for an industrial utility over a period of around 7 months, from July 2019 to January 2020.</p>
 
+<p>The final model has an <em>forecasting horizon</em> (The number of time periods to forecast into the future) of 48 time periods which corresponds to 2 days ahead forecasting.</p>
 
+<h1 id="details">Details</h1>
+<p>Main techniques and terms used:</p>
+<ul>
+  <li>Trend, Seasonality</li>
+  <li>Stationary and Non-Stationary Time Series</li>
+  <li>Augmented Dickey-Fuller Test</li>
+  <li>Autocorrelation(ACF) and Partial Autocorrelation(PACF)</li>
+  <li>Feature Engineering (lag features, standard time series features, endogenous features)</li>
+  <li>XGBoost model with Bayesan hyperparameters optimization</li>
+</ul>
+
+<p>The final model can be found inside <code class="language-plaintext highlighter-rouge">model/</code></p>
+
+<h1 id="usage">Usage</h1>
+<p>The Jupyter-Notebook, dataset and model were saved as Docker Image in GitHub Package.
+You can install the package locally:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker pull docker.pkg.github.com/danieldacosta/energy-forecast/energy-forecast_notebook:v1
+</code></pre></div></div>
+
+<p>You can also download it direct from the repository:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/DanielDaCosta/energy-forecast.git
+</code></pre></div></div>
+
+<h1 id="acknowlegments--references">Acknowlegments &amp; References</h1>
+<p>Special thanks to Mario Dagrada <a href="https://towardsdatascience.com/ml-time-series-forecasting-the-right-way-cbf3678845ff" target="_blank" rel="noopener noreferrer">Medium post</a>.</p>
+
+<p><strong>References</strong>:</p>
+<ul>
+  <li>https://www.youtube.com/watch?v=Nm7m92sZZJA</li>
+  <li>https://towardsdatascience.com/containerize-your-whole-data-science-environment-or-anything-you-want-with-docker-compose-e962b8ce8ce5</li>
+</ul>
+
+  </article>
 
 </div>
 
@@ -248,8 +242,8 @@
     
 <footer class="fixed-bottom">
   <div class="container mt-0">
-    &copy; Copyright 2023 Daniel  Da Costa.
-    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
+    © Copyright 2023 Daniel  Da Costa.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.
 
     
     
