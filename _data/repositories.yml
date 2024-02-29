@@ -6,3 +6,5 @@ github_repos:
   - DanielDaCosta/company-climate-rag-llamaindex
   - DanielDaCosta/recommendation-system
   - DanielDaCosta/apiGateway-sqs-lambda
+  - DanielDaCosta/RNN-Keras
+  - DanielDaCosta/bastionless-private-instance
