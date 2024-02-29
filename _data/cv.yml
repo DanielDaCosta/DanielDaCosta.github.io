@@ -51,7 +51,7 @@
         - Integrated and deployed microservice with GraphQL and Docker.
     - title: Embedded Software Engineer
       institution: Softbank Robotics Europe
-      year: Jun 2018 - Dec 2018
+      year: 2018
       description:
         - Presented reports to firmware team to validate sensor's effectiveness against 2 KPIs.
         - Created firmware module in C/C++ embedded in a microcontroller for a robot's inductive sensor (LDC1312/4).
