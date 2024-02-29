@@ -1,12 +1,8 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - DanielDaCosta
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - DanielDaCosta/CodeGPT
+  - DanielDaCosta/company-climate-rag-llamaindex
+  - DanielDaCosta/recommendation-system
+  - DanielDaCosta/apiGateway-sqs-lambda
