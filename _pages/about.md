@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 description: MS Data Science at University of Southern California | MS École CentraleSupélec | BSc PUC-Rio
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+# subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 
 profile:
   align: right

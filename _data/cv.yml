@@ -9,32 +9,32 @@
 - title: Education
   type: time_table
   contents:
-    - title: MS
+    - title: Master of Applied Data Science
       institution: University of Southern California
       year: 2024
-    - title: École Centrale Paris
-      institution: Master of Engineering - Double Degree with PUC-Rio	
+    - title: Master of Engineering - Double Degree with PUC-Rio	
+      institution: École Centrale Paris
       year: 2019
-    - title: Pontifical Catholic University of Rio de Janeiro (PUC-Rio) 
-      institution: Bachelor in Control and Automation Engineering, Minor in Mathematics
+    - title: Bachelor in Control and Automation Engineering, Minor in Mathematics
+      institution: Pontifical Catholic University of Rio de Janeiro (PUC-Rio) 
       year: 2019
 
-# - title: Experience
-#   type: time_table
-#   contents:
-#     - title: Data Analyst
-#       institution: Intel Corporation
-#       year: May 2023 - Present
-#       description:
-#         - Develop an all-encompassing PowerBI dashboard for proactively identifying performance deviations in 50+ AI workloads running on Intel's Ponte Vecchio GPU across single-card, multi-card, and multi-node configurations.
-#         - Design a PoC using GPT-4 and Llama-Index to ingest and associate unstructured customer engagement updates from disparate sources (e.g., PowerPoint, JIRA, Excel) into a single PowerBI based reporting for several high priority, high visibility engagements
-#     - title: Data Engineer  
-#       institution: Akad Seguros
-#       year: Jan 2022 - Aug 2022
-#       description:
-#         - Orchestrated design of 600GB Data Lake on AWS through S3, Glue, Lambda, and Step Functions; published to AWS Blog Brazil.
-#         - Ingested over 100GB of data from 8 different on-premises and cloud-based servers into Data Lake via Data Migration Service and ETL jobs.
-#         - Defined and deployed Data Warehouse (50GB) components and architecture on AWS applying tools such as S3 for storage, Spark for processing, and Athena for analytics.
+- title: Experience
+  type: time_table
+  contents:
+    - title: Data Analyst
+      institution: Intel Corporation
+      year: May 2023 - Present
+      description:
+        - Develop an all-encompassing PowerBI dashboard for proactively identifying performance deviations in 50+ AI workloads running on Intel's Ponte Vecchio GPU across single-card, multi-card, and multi-node configurations.
+        - Design a PoC using GPT-4 and Llama-Index to ingest and associate unstructured customer engagement updates from disparate sources (e.g., PowerPoint, JIRA, Excel) into a single PowerBI based reporting for several high priority, high visibility engagements
+    - title: Data Engineer  
+      institution: Akad Seguros
+      year: Jan 2022 - Aug 2022
+      description:
+        - Orchestrated design of 600GB Data Lake on AWS through S3, Glue, Lambda, and Step Functions; published to AWS Blog Brazil.
+        - Ingested over 100GB of data from 8 different on-premises and cloud-based servers into Data Lake via Data Migration Service and ETL jobs.
+        - Defined and deployed Data Warehouse (50GB) components and architecture on AWS applying tools such as S3 for storage, Spark for processing, and Athena for analytics.
 #     - title: Data Scientist 
 #       institution: Cyberlabs (Google for Startups 2020)
 #       year: Jan 2020 - Dec 2021
