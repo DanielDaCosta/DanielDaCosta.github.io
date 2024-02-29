@@ -24,37 +24,37 @@
   contents:
     - title: Data Analyst
       institution: Intel Corporation
-      year: May 2023 - Present
+      year: 2023-Today
       description:
         - Develop an all-encompassing PowerBI dashboard for proactively identifying performance deviations in 50+ AI workloads running on Intel's Ponte Vecchio GPU across single-card, multi-card, and multi-node configurations.
         - Design a PoC using GPT-4 and Llama-Index to ingest and associate unstructured customer engagement updates from disparate sources (e.g., PowerPoint, JIRA, Excel) into a single PowerBI based reporting for several high priority, high visibility engagements
     - title: Data Engineer  
       institution: Akad Seguros
-      year: Jan 2022 - Aug 2022
+      year: 2022
       description:
         - Orchestrated design of 600GB Data Lake on AWS through S3, Glue, Lambda, and Step Functions; published to AWS Blog Brazil.
         - Ingested over 100GB of data from 8 different on-premises and cloud-based servers into Data Lake via Data Migration Service and ETL jobs.
         - Defined and deployed Data Warehouse (50GB) components and architecture on AWS applying tools such as S3 for storage, Spark for processing, and Athena for analytics.
-#     - title: Data Scientist 
-#       institution: Cyberlabs (Google for Startups 2020)
-#       year: Jan 2020 - Dec 2021
-#       description:
-#         - Engineered Machine Learning model with 71% f1-score to reduce churn from 6 million user cybersecurity app; deployed model in AWS utilizing EMR Clusters with Spark for data preprocessing, EC2 instance for ML inference, and Data Pipeline for ETL. 
-#         - Guided a team of 4 in creating a Churn Predictive Model (LSTM network) with 72% precision and 83% recall for telecom company; leveraged statistical analytics techniques to analyze customer churn patterns against 10 key metrics.
-#         - Spearheaded a team of 3 in constructing a system aiding 20+ companies in controlling COVID-19 spread for 3,000 employees; implemented event-driven architecture on AWS employing Infrastructure as Code and Lambda, SQS, SNS, API Gateway, and RDS.
-#         - Collaborated with 2 members to construct an XGBoost model with 77% f1-score to maximize customers' revenue.
-#     - title: Data Scientist 
-#       institution: Cyberlabs (Google for Startups 2020)
-#       year: July 2019 - Dec 2019
-#       description:
-#         -	Built Node.js back-end service generating up to 10 insights per minute from Computer Vision Model; increased 100 establishments' decision-making productivity by 20 hours/month.
-#         - Integrated and deployed microservice with GraphQL and Docker.
-#     - title: Embedded Software Engineer
-#       institution: Softbank Robotics Europe
-#       year: Jun 2018 - Dec 2018
-#       description:
-#         -	Created firmware module in C/C++ embedded in a microcontroller for a robot's inductive sensor (LDC1312/4).
-#         - Presented reports to firmware team to validate sensor's effectiveness against 2 KPIs.
+    - title: Data Scientist 
+      institution: Cyberlabs (Google for Startups 2020)
+      year: 2020 - 2021
+      description:
+        - Engineered Machine Learning model with 71% f1-score to reduce churn from 6 million user cybersecurity app; deployed model in AWS utilizing EMR Clusters with Spark for data preprocessing, EC2 instance for ML inference, and Data Pipeline for ETL. 
+        - Guided a team of 4 in creating a Churn Predictive Model (LSTM network) with 72% precision and 83% recall for telecom company; leveraged statistical analytics techniques to analyze customer churn patterns against 10 key metrics.
+        - Spearheaded a team of 3 in constructing a system aiding 20+ companies in controlling COVID-19 spread for 3,000 employees; implemented event-driven architecture on AWS employing Infrastructure as Code and Lambda, SQS, SNS, API Gateway, and RDS.
+        - Collaborated with 2 members to construct an XGBoost model with 77% f1-score to maximize customers' revenue.
+    - title: Data Scientist 
+      institution: Cyberlabs (Google for Startups 2020)
+      year: 2019 - 2019
+      description:
+        - Built Node.js back-end service generating up to 10 insights er minute from Computer Vision Model; increased 100 establishments' decision-making productivity by 20 hours/month.
+        - Integrated and deployed microservice with GraphQL and Docker.
+    - title: Embedded Software Engineer
+      institution: Softbank Robotics Europe
+      year: Jun 2018 - Dec 2018
+      description:
+        - Presented reports to firmware team to validate sensor's effectiveness against 2 KPIs.
+        - Created firmware module in C/C++ embedded in a microcontroller for a robot's inductive sensor (LDC1312/4).
       
 
 #     - title: Director
