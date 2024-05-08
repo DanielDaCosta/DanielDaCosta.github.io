@@ -19,17 +19,17 @@ social: true  # includes social icons at the bottom of the page
 
 > Committed and creative engineering graduate, passionate about innovation, technology, and out-of-the-box solutions. Harnessing the power of data science in the service of humanity.
 
-I am Data Science Graduate at the University of Southern California with a Double degree from École CentraleSupélec and Pontifical Catholic University of Rio de Janeiro. I have 2+ years of full-time experience in Data Science and Data Engineering, dealing with real-world problems using skills such as Python, SQL, Amazon Web Services (Lambda, EC2, Amazon Elastic MapReduce, Glue, Step Functions, SQS, SNS), Airflow, Keras and Scikit-Learn.
+As a Data Scientist with 3+ years of experience, I have honed my skills in AI, ML, data analysis and engineering. Currently a Data Analyst at Intel Corporation, where I utilize my data science skills and cloud services knowledge to optimize and monitor the performance of AI workloads running on Intel's Max and Flex GPUs, as well as the AI Accelerator GAUDI. With a Master's degree from the University of Southern California and Ecole Centrale Paris, I possess a strong foundation in both theoretical and applied aspects of data-driven solutions.
 
-**Programming Languages**: Python (Pandas, Numpy, PySpark, Scikit-learn), SQL (PostgreSQL, MySQL, SQL Server), JavaScript, C/C++, Matlab
+**Programming Languages**: Python (Pandas, Numpy, PySpark), R, SQL (PostgreSQL, MySQL, SQL Server), NoSQL (MongoDB), JavaScript, C/C++
 
 **ETL Tools**: Airflow, AWS Step Functions, AWS Glue, Amazon Elastic MapReduce
 
-**Database**: PostgreSQL, MySQL, SQL Server
+**Database**: PostgreSQL, MySQL, SQL Server, MongoDB
 
 **Cloud Computing**: Amazon Web Services
 
-**Other Tools**: AWS QuickSight, Power BI, Apache Spark, Keras, TensorFlow, Terraform, Gitlab CI/CD, Docker, Git
+**Other Tools**: Power BI, Amazon QuickSight, Tableau, Apache Spark, Pytorch, TensorFlow, Terraform, Gitlab CI/CD, Docker, Git
 
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
